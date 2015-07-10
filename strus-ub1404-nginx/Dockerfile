@@ -18,10 +18,15 @@ RUN chown strus:strus /srv/strus
 
 RUN chown www-data:www-data /usr/share/nginx/html/*
 
+RUN mkdir /home/strus
+RUN chown strus:strus home/strus
+
 USER strus
 
 ENTRYPOINT ["/srv/entrypoint.sh"]
 CMD ["strusRpcServer", "-c", "-s", "path=/srv/strus/storage"]
+
+WORKDIR /home/strus
 
 EXPOSE 80
 
