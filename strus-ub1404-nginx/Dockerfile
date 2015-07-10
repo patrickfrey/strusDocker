@@ -27,6 +27,7 @@ ENTRYPOINT ["/srv/entrypoint.sh"]
 CMD ["strusRpcServer", "-c", "-s", "path=/srv/strus/storage"]
 
 WORKDIR /home/strus
+USER root
 
 EXPOSE 80
 
