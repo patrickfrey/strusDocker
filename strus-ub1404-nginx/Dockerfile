@@ -11,10 +11,17 @@ COPY ./test.html /usr/share/nginx/html/index.html
 COPY ./test.php /usr/share/nginx/html/test.php
 COPY ./entrypoint.sh /srv/entrypoint.sh
 
+RUN useradd strus
+
+RUN mkdir /srv/strus
+RUN chown strus:strus /srv/strus
+
 RUN chown www-data:www-data /usr/share/nginx/html/*
 
+USER strus
+
 ENTRYPOINT ["/srv/entrypoint.sh"]
-CMD ["strusRpcServer", "-s", "path=/srv/storage"]
+CMD ["strusRpcServer", "-c", "-s", "path=/srv/strus/storage"]
 
 EXPOSE 80
 
