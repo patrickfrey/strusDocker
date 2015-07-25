@@ -39,7 +39,8 @@ RUN    /etc/init.d/postgresql start &&\
 
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible. 
-RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.conf
+RUN echo "host all  strus    127.0.0.1/32  md5" >> /etc/postgresql/9.3/main/pg_hba.conf
+RUN echo "host all  strus         ::1/128  md5" >> /etc/postgresql/9.3/main/pg_hba.conf
 
 # And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
 RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
@@ -52,16 +53,20 @@ RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 
 RUN chown -R postgres:postgres /var/run/postgresql
 
-# Web server:
-# -----------
-USER root
-WORKDIR /etc/nginx
+# Strus server:
+# -------------
+USER strus
+COPY ./strus_storage.conf /etc/strus/storage.conf
 ENTRYPOINT ["/srv/entrypoint.sh"]
-CMD ["nginx"]
+CMD ["strusRpcServer", "-c", "-S", "/etc/strus/storage.conf"]
 
+# Permissions for start in shell:
+# -------------------------------
 WORKDIR /home/strus
 USER root
 
+# Mapped ports:
+# -------------
 EXPOSE 80
 
 

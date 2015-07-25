@@ -15,20 +15,27 @@ RUN useradd strus
 
 RUN mkdir /srv/strus
 RUN chown strus:strus /srv/strus
+RUN mkdir /etc/strus
 
 RUN chown www-data:www-data /usr/share/nginx/html/*
 
 RUN mkdir /home/strus
 RUN chown strus:strus home/strus
 
+# Strus server:
+# -------------
 USER strus
-
+COPY ./strus_storage.conf /etc/strus/storage.conf
 ENTRYPOINT ["/srv/entrypoint.sh"]
-CMD ["strusRpcServer", "-c", "-s", "path=/srv/strus/storage"]
+CMD ["strusRpcServer", "-c", "-S", "/etc/strus/storage.conf"]
 
+# Permissions for start in shell:
+# -------------------------------
 WORKDIR /home/strus
 USER root
 
+# Mapped ports:
+# -------------
 EXPOSE 80
 
 

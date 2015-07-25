@@ -9,9 +9,9 @@ RETVAL=0
 PROG="strusRpcServer"
 OPTIONS=
 PIDFILE=/var/run/$PROG.pid
-STORAGE='path=/srv/strus/storage;cache=1G'
+CONFIG=/etc/strus/storage.conf
 USER=strus
-CMD="nohup strusRpcServer -c -s '$STORAGE' -p 7181 &"
+CMD="nohup strusRpcServer -c -S '$CONFIG' -p 7181 &"
 
 runlevel=$(set -- $(runlevel); eval "echo \$$#" )
 
@@ -24,7 +24,7 @@ start()
 {
         echo -n "Starting $PROG: "
         sudo su - $USER -c "$CMD"
-        [ "$?" = 0 ] && ( touch /var/lock/strusRpcServer; ps -fe | grep $PROG | grep $STORAGE | awk '{print $2}' > $PIDFILE )
+        [ "$?" = 0 ] && ( touch /var/lock/strusRpcServer; ps -fe | grep $PROG | grep $CONFIG | awk '{print $2}' > $PIDFILE )
 }
 
 stop()
