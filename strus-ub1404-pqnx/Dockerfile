@@ -56,7 +56,6 @@ RUN chown -R postgres:postgres /var/run/postgresql
 # Strus server:
 # -------------
 USER strus
-COPY ./strus_storage.conf /etc/strus/storage.conf
 ENTRYPOINT ["/srv/entrypoint.sh"]
 CMD ["strusRpcServer", "-c", "-S", "/etc/strus/storage.conf"]
 
