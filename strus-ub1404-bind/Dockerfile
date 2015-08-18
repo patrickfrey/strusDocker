@@ -3,13 +3,18 @@ MAINTAINER patrickpfrey@yahoo.com
 
 RUN apt-get update \
  && apt-get -y --force-yes install \
-	swig php5-dev
+	swig php5-dev openjdk-7-jdk \
+	openjdk-7-jre-lib \
+	python2.7 python2.7-dev
 
-RUN wget https://github.com/patrickfrey/strusBindings/archive/v0.1.5.zip
-RUN unzip v0.1.5.zip && rm v0.1.5.zip
-RUN cd strusBindings-0.1.5/\
-	&& cmake CMakeLists.txt && make && make install\
-	&& cp swig/php/strus.so `php-config --extension-dir`/\
-	&& cp swig/strus.php /usr/share/php/
+# Get around a bug in CMAKE FindJava:
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+
+RUN wget https://github.com/patrickfrey/strusBindings/archive/v0.1.7.zip
+RUN unzip v0.1.7.zip && rm v0.1.7.zip
+RUN cd strusBindings-0.1.7/\
+	&& cmake CMakeLists.txt -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_JAVA=YES && make && make install\
+	&& cp swig/php/strus_php.so `php-config --extension-dir`/strus.so \
+	&& cp swig/php/strus.php /usr/share/php/
 
 
