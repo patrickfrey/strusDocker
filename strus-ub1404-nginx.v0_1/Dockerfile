@@ -1,4 +1,4 @@
-FROM patrickfrey/strus-ub1404-bind
+FROM patrickfrey/strus-ub1404-bind:v0_1
 MAINTAINER patrickpfrey@yahoo.com
 
 RUN apt-get update \

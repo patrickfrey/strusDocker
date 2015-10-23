@@ -1,0 +1,113 @@
+body {
+	background:#fff
+	top center no-repeat;
+	color:#303030;
+	font:84% Arial,Helvetica,sans-serif; line-height:1.6em;
+}
+
+h1 {
+	color:#888;
+	font-size:1.2em;
+	line-height:1.1em;
+	margin:20px 0 0 0;
+}
+
+#search_form  {
+	display: table;
+}
+
+#search_elements {
+	display: table-row;
+}
+
+#search_logo {
+	display: table-cell;
+	align: center;
+	width: 3%;
+}
+
+#strus_logo {
+	display:block;
+}
+
+#search_input {
+	display: table-cell;
+	align: top;
+	width: 45%;
+}
+
+#search_button {
+	display: table-cell;
+	align: center;
+	width: 3%;
+}
+
+#navigation_form  {
+	display: table;
+}
+
+#navigation_elements {
+	display: table-row;
+}
+
+#navigation_next {
+	display: table-cell;
+	align: center;
+	width: 20%;
+}
+
+#navigation_prev {
+	display: table-cell;
+	align: center;
+	width: 20%;
+}
+
+#search_ranklist {
+	display: table;
+}
+
+#search_rank {
+	display: table-row;
+}
+
+#rank_docno {
+	display: none;
+}
+
+#rank_weight {
+	display: table-cell;
+	font-size:0.7em;
+	align: center;
+	width: 5%;
+}
+
+#rank_content {
+	display: table-cell;
+	align: center;
+	width: 80%;
+}
+
+#rank_title {
+	color:#3888;
+	font-size:1.2em;
+	line-height:1.3em;
+	margin:10px 0 0 0;
+}
+
+#rank_summary {
+	color:#668888;
+	font-size:1.1em;
+	line-height:1.2em;
+	width: 80%;
+}
+
+span.match {
+	font-weight: bold;
+}
+
+#footer {
+	display: table;
+	width: 80%;
+}
+
+
