@@ -13,8 +13,6 @@ ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 RUN wget https://github.com/patrickfrey/strusBindings/archive/0.2.0.zip
 RUN unzip 0.2.0.zip && rm 0.2.0.zip
 RUN cd strusBindings-0.2.0/\
-	&& cmake CMakeLists.txt -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_JAVA=YES && make && make install\
-	&& cp swig/php/strus_php.so `php-config --extension-dir`/strus.so \
-	&& cp swig/php/strus.php /usr/share/php/
+	&& cmake CMakeLists.txt -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_JAVA=YES && make && make install
 
 
