@@ -1,0 +1,223 @@
+
+== Africa
+Algeria, Algiers
+Angola,	Luanda
+Benin, Porto-Novo
+Botswana, Gaborone
+Burkina Faso, Ouagadougou
+Burundi, Bujumbura
+Cameroon, Yaounde
+Cape Verde, Praia
+Central African Republic,  Bangui
+Chad, N'Djamena
+Comoros, Moroni
+Congo, Kinshasa
+Congo, Brazzaville
+Cote d'Ivoire, Yamoussoukro
+Djibouti, Djibouti
+Egypt, Cairo
+Equatorial Guinea, Malabo
+Eritrea, Asmara
+Ethiopia, Addis Ababa
+Gabon, Libreville
+Gambia, The, Banjul
+Ghana, Accra
+Guinea, Conakry
+Guinea-Bissau, Bissau
+Kenya, Nairobi
+Lesotho, Maseru
+Liberia, Monrovia
+Libya, Tripoli
+Madagascar, Antananarivo
+Malawi, Lilongwe
+Mali, Bamako
+Mauritania, Nouakchott
+Mauritius, Port Louis
+Morocco, Rabat
+Mozambique, Maputo
+Namibia, Windhoek
+Niger, Niamey
+Nigeria, Abuja
+Rwanda, Kigali
+Sao Tome and Principe, Sao Tome
+Senegal, Dakar
+Seychelles, Victoria
+Sierra Leone, Freetown
+Somalia, Mogadishu
+South Africa, Pretoria
+Sudan, Khartoum
+Swaziland, Mbabane
+Tanzania, Dar es Salaam
+Togo, Lome
+Tunisia, Tunis
+Uganda, Kampala
+Western Sahara, no capital
+Zambia, Lusaka
+Zimbabwe, Harare
+
+== Asia
+Afghanistan, Kabul
+Armenia, Yerevan
+Azerbaijan, Baku
+Bangladesh, Dhaka
+Bhutan, Thimphu
+Brunei, Bandar Seri Begawan
+Myanmar, Rangoon
+Bahrain, Manama
+Cambodia, Phnom Penh
+China, Beijing
+East Timor, Dili
+Gaza Strip, none
+Georgia, T'bilisi
+Hong Kong, Hong Kong
+India, New Delhi
+Indonesia, Jakarta
+Iran, Tehran
+Iraq, Baghdad
+Israel, Jerusalem
+Japan, Tokyo
+Jordan, Amman
+Kazakhstan, Astana 
+North Korea, Pyongyang
+South Korea, Seoul
+Kuwait, Kuwait
+Kyrgyzstan, Bishkek
+Laos, Vientiane
+Macau, Macau
+Malaysia, Kuala Lumpur
+Maldives, Male
+Mongolia, Ulaanbaatar
+Myanmar, Naypyidaw
+Nepal, Kathmandu
+Oman, Muscat
+Pakistan, Islamabad
+Papua New Guinea, Port Moresby
+Philippines, Manila
+Qatar, Doha
+Russia, Moscow
+Saudi Arabia, Riyadh
+Singapore, Singapore
+Sri Lanka, Colombo
+Syria, Damascus
+Taiwan, Taipei
+Tajikistan, Dushanbe
+Thailand, Bangkok
+Turkey, Ankara
+Turkmenistan, Ashgabat
+United Arab Emirates, Abu Dhabi
+Uzbekistan, Tashkent
+Vietnam, Hanoi
+Yemen, Sanaa
+
+== Europe
+
+Albania, Tirana
+Andorra, Andorra la Vella
+Austria, Vienna
+Belarus, Minsk
+Belgium, Brussels
+Bosnia and Herzegovina, Sarajevo
+Bulgaria, Sofia
+Croatia, Zagreb
+Cyprus, Nicosia
+Czech Republic, Prague
+Denmark, Copenhagen
+Estonia, Tallinn
+Finland, Helsinki
+France, Paris
+Germany, Berlin
+Greece, Athens
+Vatican City, Vatican City
+Hungary, Budapest
+Iceland, Reykjavik
+Ireland, Dublin
+Italy, Rome
+Kosovo, Pristina
+Latvia, Riga
+Lebanon, Beirut
+Latvia, Riga
+Liechtenstein, Vaduz
+Lithuania, Vilnius
+Luxembourg, Luxembourg
+Macedonia, Skopje
+Malta, Valletta
+Moldova, Chisinau
+Monaco, Monaco
+Netherlands, Amsterdam
+Norway, Oslo
+Poland, Warsaw
+Portugal, Lisbon
+Romania, Bucharest
+Russia, Moscow
+San Marino, San Marino
+Serbia, Belgrade
+Montenegro, Podgorica
+Slovakia, Bratislava
+Slovenia, Ljubljana
+Spain, Madrid
+Sweden, Stockholm
+Switzerland, Bern
+Turkey, Ankara
+Ukraine, Kiev
+United Kingdom, London
+
+== Oceania/Australia
+Australia, Canberra
+Cook Islands, Avarua
+Fiji, Suva
+Kiribati, Tarawa
+Marshall Islands, Majuro
+Micronesia, Federated States of, Palikir
+Nauru, Yaren District
+New Zealand, Wellington
+Niue, Alofi
+Palau, Koror
+Samoa, Apia
+Solomon Islands, Honiara
+Tonga, Nuku'alofa
+Tuvalu, Fongafale
+Vanuatu, Port-Vila
+
+
+== North and Central America (Including the Caribbean)
+
+Antigua and Barbuda, Saint John's
+Bahamas, The Nassau
+Barbados, Bridgetown
+Belize, Belmopan
+Canada, Ottawa
+Cuba, Havana
+Costa Rica, San Jose
+Dominica, Roseau
+Dominican Republic, Santo Domingo
+Grenada, Saint George's
+Haiti, Port-au-Prince
+Honduras, Tegucigalpa
+Jamaica, Kingston
+Mexico, Mexico City
+Nicaragua, Managua
+Panama, Panama City
+Saint Kitts and Nevis, Basseterre
+Saint Lucia, Castries
+Saint Vincent and the Grenadines, Kingstown
+Trinidad and Tobago, Port-of-Spain
+United States of America, Washington
+
+== South America
+
+Argentina, Buenos Aires
+Bolivia, La Paz
+Brazil, Brasilia
+Chile, Santiago
+Colombia, Bogota
+Ecuador, Quito
+El Salvador, San Salvador
+Guatemala, Guatemala
+French Guiana, Cayenne
+Guyana, Georgetown
+Paraguay, Asuncion
+Peru, Lima
+Suriname, Paramaribo
+Uruguay, Montevideo
+Venezuela, Caracas
+
