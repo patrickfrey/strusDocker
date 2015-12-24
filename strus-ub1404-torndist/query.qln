@@ -1,0 +1,5 @@
+[Feature selfeat :word]
+    contains( music, india )
+[Feature docfeat :word]
+    music india
+
