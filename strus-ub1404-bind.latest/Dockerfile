@@ -3,6 +3,7 @@ MAINTAINER patrickpfrey@yahoo.com
 
 RUN apt-get update \
  && apt-get -y --force-yes install \
+	libboost-python1.54-dev \
 	swig php5-dev openjdk-7-jdk \
 	openjdk-7-jre-lib \
 	python2.7 python2.7-dev
@@ -16,8 +17,7 @@ RUN wget https://github.com/patrickfrey/strusBindings/archive/master.zip
 RUN unzip master.zip && rm master.zip
 RUN cd strusBindings-master/\
 	&& cmake CMakeLists.txt -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_JAVA=YES && make && make install\
-	&& cp swig/php/strus_php.so `php-config --extension-dir`/strus.so \
-	&& cp swig/php/strus.php /usr/share/php/ \
-	&& cp swig/python/strus.py /usr/share/python/
+	&& cp lang/php/strus.so `php-config --extension-dir`/strus.so \
+	&& cp lang/php/strus.php /usr/share/php/
 
 
