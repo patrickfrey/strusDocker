@@ -13,6 +13,7 @@ COPY src/step5/search_bm25_html.tpl /home/strus/src/step5/search_bm25_html.tpl
 COPY src/step6/strusIR.py /home/strus/src/step6/strusIR.py
 COPY src/step6/strusServer.py /home/strus/src/step6/strusServer.py
 COPY src/step8/strusIR.py /home/strus/src/step8/strusIR.py
+COPY src/step8/strusServer.py /home/strus/src/step8/strusServer.py
 COPY countries.xml /home/strus/countries.xml
 
 ENV PYTHONPATH /usr/local/lib/strus/python
