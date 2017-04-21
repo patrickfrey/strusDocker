@@ -1,6 +1,11 @@
 FROM patrickfrey/strus-ub1404-env
 MAINTAINER patrickpfrey@yahoo.com
 
+# Project strusBase
+RUN wget https://github.com/patrickfrey/strusBase/archive/master.zip
+RUN unzip master.zip && rm master.zip
+RUN cd strusBase-master/ && cmake CMakeLists.txt && make && make install
+
 # Project strus
 RUN wget https://github.com/patrickfrey/strus/archive/master.zip
 RUN unzip master.zip && rm master.zip
@@ -10,6 +15,11 @@ RUN cd strus-master/ && cmake CMakeLists.txt && make && make install
 RUN wget https://github.com/patrickfrey/strusAnalyzer/archive/master.zip
 RUN unzip master.zip && rm master.zip
 RUN cd strusAnalyzer-master/ && cmake CMakeLists.txt && make && make install
+
+# Project strusTrace
+RUN wget https://github.com/patrickfrey/strusTrace/archive/master.zip
+RUN unzip master.zip && rm master.zip
+RUN cd strusTrace-master/ && cmake CMakeLists.txt && make && make install
 
 # Project strusModule
 RUN wget https://github.com/patrickfrey/strusModule/archive/master.zip
