@@ -1,0 +1,20 @@
+[Document]
+	doc = /list/doc;
+
+[SearchIndex]
+	word = convdia(en):stem(en):lc  word  /list/doc//();
+	sent = empty punctuation(en,".") /list/doc//();
+	continent_var = empty content {position=succ} /list/doc/continent@id;
+
+[ForwardIndex]
+	orig = orig split /list/doc//();
+	continent = text content {position=succ} /list/doc/continent@id;
+
+[Attribute]
+	docid = text content /list/doc@id;
+
+[Aggregator]
+	doclen = count(word);
+
+
+
