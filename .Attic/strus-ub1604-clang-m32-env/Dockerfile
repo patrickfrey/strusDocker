@@ -10,8 +10,16 @@ RUN apt-get update \
 	unzip wget git \
 	cmake make \
 	llvm build-essential clang-3.8 lldb-3.8 \
+	g++-multilib gcc-multilib \
 	debhelper python \
 	autotools-dev autoconf libtool
+
+RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.8 380 \
+	--slave /usr/bin/clang++ clang++ /usr/bin/clang++-3.8 \
+	--slave	/usr/bin/clang-check clang-check /usr/bin/clang-check-3.8 \
+	--slave /usr/bin/clang-query clang-query /usr/bin/clang-query-3.8 \
+	--slave /usr/bin/clang-rename clang-rename /usr/bin/clang-rename-3.8
+
 
 ENV LANG "en_US.UTF-8"
 ENV LC_ALL "en_US.UTF-8"
@@ -22,7 +30,7 @@ RUN apt-get -y --yes install \
 
 RUN wget https://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.gz
 RUN tar -xvzf boost_1_58_0.tar.gz && rm boost_1_58_0.tar.gz
-RUN cd boost_1_58_0 && ./bootstrap.sh
+RUN cd boost_1_58_0 && ./bootstrap.sh --with-libraries=atomic,chrono,date_time,filesystem,program_options,regex,system,thread,timer
 RUN cd boost_1_58_0 && ./b2 cxxflags=-m32 cflags=-m32 .; exit 0
 RUN cd boost_1_58_0 && mkdir lib && mv stage/lib/* lib/
 

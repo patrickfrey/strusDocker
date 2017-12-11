@@ -1,7 +1,7 @@
 #!/bin/bash
 
 do_build() {
-	docker build --no-cache -t patrickfrey/strus-$1 strus-$1 > logs/$1.log 2>&1
+	docker build --no-cache -t patrickfrey/$1 $1 > logs/$1.log 2>&1
 	# TEST docker build --no-cache $1 > logs/$1.log 2>&1
 }
 

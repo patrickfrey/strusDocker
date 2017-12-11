@@ -19,7 +19,7 @@ ENV LC_ALL "en_US.UTF-8"
 
 RUN wget https://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.gz
 RUN tar -xvzf boost_1_58_0.tar.gz && rm boost_1_58_0.tar.gz
-RUN cd boost_1_58_0 && ./bootstrap.sh
+RUN cd boost_1_58_0 && ./bootstrap.sh --with-libraries=atomic,chrono,date_time,filesystem,program_options,regex,system,thread,timer
 RUN cd boost_1_58_0 && ./b2 cxxflags=-m32 cflags=-m32 .; exit 0
 RUN cd boost_1_58_0 && mkdir lib && mv stage/lib/* lib/
 

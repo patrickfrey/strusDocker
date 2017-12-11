@@ -12,6 +12,12 @@ RUN apt-get update \
 	llvm build-essential clang-3.8 lldb-3.8 \
 	debhelper
 
+RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.8 380 \
+	--slave /usr/bin/clang++ clang++ /usr/bin/clang++-3.8 \
+	--slave	/usr/bin/clang-check clang-check /usr/bin/clang-check-3.8 \
+	--slave /usr/bin/clang-query clang-query /usr/bin/clang-query-3.8 \
+	--slave /usr/bin/clang-rename clang-rename /usr/bin/clang-rename-3.8
+
 ENV LANG "en_US.UTF-8"
 ENV LC_ALL "en_US.UTF-8"
 
