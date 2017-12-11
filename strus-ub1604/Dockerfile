@@ -52,8 +52,8 @@ RUN unzip master.zip && rm master.zip
 # Project strusPattern
 RUN wget https://github.com/patrickfrey/strusPattern/archive/master.zip
 RUN unzip master.zip && rm master.zip
-RUN cd strusPattern-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/ && cd ../..
-RUN cd strusPattern-master/3rdParty && cp -Rf ../../hyperscan-master/* hyperscan/ && cd ../..
+RUN cd strusPattern-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
+RUN cd strusPattern-master/3rdParty && cp -Rf ../../hyperscan-master/* hyperscan/
 
 # Project strusVector
 RUN wget https://github.com/patrickfrey/strusVector/archive/master.zip
@@ -66,20 +66,20 @@ RUN unzip master.zip && rm master.zip
 # Project strusBindings
 RUN wget https://github.com/patrickfrey/strusBindings/archive/master.zip
 RUN unzip master.zip && rm master.zip
-RUN cd strusBindings-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/ && cd ../..
-RUN cd strusBindings-master/3rdParty && cp -Rf ../../papuga-master/* papuga/ && cd ../..
+RUN cd strusBindings-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
+RUN cd strusBindings-master/3rdParty && cp -Rf ../../papuga-master/* papuga/
 
 # Build
 RUN cd strusBase-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
 RUN cd strus-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
 RUN cd strusAnalyzer-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
 RUN cd strusTrace-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strusModule-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install && cd ..
-RUN cd strusRpc-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install && cd ..
-RUN cd strusPattern-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install && cd ..
-RUN cd strusVector-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install && cd ..
-RUN cd strusUtilities-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install && cd ..
-RUN cd strusBindings-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_STRUS_VECTOR=YES -DWITH_STRUS_PATTERN=YES . && make && make install && cd ..
+RUN cd strusModule-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusRpc-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusPattern-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusVector-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusUtilities-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusBindings-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_STRUS_VECTOR=YES -DWITH_STRUS_PATTERN=YES . && make && make install
 
-
+COPY test.sh /test.sh
 

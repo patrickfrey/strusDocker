@@ -1,8 +1,7 @@
 #!/bin/bash
 
 do_build() {
-	docker build --no-cache -t patrickfrey/$1 $1 > logs/$1.log 2>&1
-	# TEST docker build --no-cache $1 > logs/$1.log 2>&1
+	docker build --no-cache -t patrickfrey/$1 $1 > logs/$1.build.log 2>&1
 }
 
 if [ "$#" -lt 1 ]; then
@@ -11,9 +10,9 @@ if [ "$#" -lt 1 ]; then
 fi
 
 run_build() {
-	(do_build $1 && echo "OK" > logs/$1.status) || {
+	(do_build $1 && echo "OK" > logs/$1.build.status) || {
 		status=$?
-		echo "ERROR" > logs/$1.status
+		echo "ERROR" > logs/$1.build.status
 	}
 }
 
@@ -21,13 +20,13 @@ mkdir -p logs
 for img in $@
 do
 	run_build $img &
-	echo $! > logs/$img.pid
+	echo $! > logs/$img.build.pid
 done
 
 jobs=""
 for img in $@
 do
-	jobs+=" $(cat logs/$img.pid)"
+	jobs+=" $(cat logs/$img.build.pid)"
 done
 
 FAIL=0
@@ -40,8 +39,8 @@ if [ "$FAIL" == "0" ];
 then
 	for img in $@
 	do
-		rm logs/$img.pid
-		echo "$img $(cat logs/$img.status)"
+		rm logs/$img.build.pid
+		echo "$img $(cat logs/$img.build.status)"
 	done
 	(>&2 echo "done")
 	exit 0
