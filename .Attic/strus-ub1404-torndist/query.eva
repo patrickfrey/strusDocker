@@ -1,0 +1,5 @@
+SELECT selfeat;
+EVAL 1 * bm25( k1=0.75, b=2.1, avgdoclen=20, .match=docfeat );
+
+SUMMARIZE title = attribute( name=title );
+

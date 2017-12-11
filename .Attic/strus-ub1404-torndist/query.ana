@@ -1,0 +1,1 @@
+word = convdia(en):stem(en):lc word;

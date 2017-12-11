@@ -1,0 +1,25 @@
+[Document]
+	doc = /list/item;
+
+[SearchIndex]
+	word = convdia(en):stem(en):lc  word  /list/item/title();
+	word = convdia(en):stem(en):lc  word  /list/item/artist();
+	word = convdia(en):stem(en):lc  word  /list/item/note();
+
+[ForwardIndex]
+	orig = orig split /list/item/title();
+	orig = orig split /list/item/artist();
+	orig = orig split /list/item/note();
+
+[Attribute]
+	docid = text content /list/item/id();
+	title = text content /list/item/title();
+	upc = text content /list/item/upc();
+	note = text content /list/item/note();
+
+[MetaData]
+	date = date2int("d 1877-01-01", "%Y-%m-%d %H:%M:%s") regex("[0-9\-]{8,10} [0-9:]{6,8}") /list/item/date();
+
+[Aggregator]
+	doclen = count(word);
+
