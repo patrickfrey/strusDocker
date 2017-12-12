@@ -70,13 +70,15 @@ RUN cd strusBindings-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
 RUN cd strusBindings-master/3rdParty && cp -Rf ../../papuga-master/* papuga/ && cd ../..
 
 # Build:
-# RUN cd strusBase-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install
-# RUN cd strus-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 -DLEVELDB_ROOT=/leveldb-master . && make && make install
-# RUN cd strusAnalyzer-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install
-# RUN cd strusTrace-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install
-# RUN cd strusModule-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install && cd ..
-# RUN cd strusRpc-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install && cd ..
-# RUN cd strusUtilities-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install && cd ..
-# RUN cd strusBindings-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 -DWITH_PHP=NO -DWITH_PYTHON=NO -DWITH_STRUS_VECTOR=NO -DWITH_STRUS_PATTERN=NO . && make && make install && cd ..
+RUN cd strusBase-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install
+RUN cd strus-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 -DLEVELDB_ROOT=/leveldb-master . && make && make install
+RUN cd strusAnalyzer-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install
+RUN cd strusTrace-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install
+RUN cd strusModule-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install && cd ..
+RUN cd strusRpc-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install && cd ..
+RUN cd strusUtilities-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 . && make && make install && cd ..
+RUN cd strusBindings-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-pthread -m32" -DCMAKE_CXX_FLAGS="-pthread -m32" -DBOOST_ROOT=/boost_1_58_0 -DWITH_PHP=NO -DWITH_PYTHON=NO -DWITH_STRUS_VECTOR=NO -DWITH_STRUS_PATTERN=NO . && make && make install && cd ..
+
+COPY test.sh /test.sh
 
 
