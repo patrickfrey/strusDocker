@@ -56,5 +56,5 @@ RUN cd strusUtilities-0.15.4/ && cmake CMakeLists.txt && make && make install
 RUN echo /usr/local/lib/strus > /etc/ld.so.conf.d/strus.conf
 RUN ldconfig
 
-COPY test.sh /test.sh
+COPY test.sh /
 

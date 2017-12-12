@@ -81,5 +81,5 @@ RUN cd strusVector-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE
 RUN cd strusUtilities-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
 RUN cd strusBindings-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_STRUS_VECTOR=YES -DWITH_STRUS_PATTERN=YES . && make && make install
 
-COPY test.sh /test.sh
+COPY test.sh /
 
