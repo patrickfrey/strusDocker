@@ -1,6 +1,9 @@
 FROM patrickfrey/strus-ub1604-env
 MAINTAINER patrickpfrey@yahoo.com
 
+# Install scripts to test all
+COPY test.sh /
+
 # Project textwolf
 RUN wget https://github.com/patrickfrey/textwolf/archive/master.zip
 RUN unzip master.zip && rm master.zip
@@ -80,6 +83,4 @@ RUN cd strusPattern-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYP
 RUN cd strusVector-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
 RUN cd strusUtilities-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
 RUN cd strusBindings-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_STRUS_VECTOR=YES -DWITH_STRUS_PATTERN=YES . && make && make install
-
-COPY test.sh /
 

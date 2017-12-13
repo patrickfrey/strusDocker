@@ -1,6 +1,9 @@
 FROM patrickfrey/strus-ub1604-env
 MAINTAINER patrickpfrey@yahoo.com
 
+# Install scripts to test all
+COPY test.sh /
+
 # Project textwolf
 RUN wget https://github.com/patrickfrey/textwolf/archive/master.zip
 RUN unzip master.zip && rm master.zip
@@ -56,5 +59,4 @@ RUN cd strusUtilities-0.15.4/ && cmake CMakeLists.txt && make && make install
 RUN echo /usr/local/lib/strus > /etc/ld.so.conf.d/strus.conf
 RUN ldconfig
 
-COPY test.sh /
 
