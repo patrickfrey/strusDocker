@@ -1,7 +1,7 @@
 #!/bin/bash
 
 do_test() {
-	docker run -t -i patrickfrey/$1 /test.sh >> logs/$1.test.log 2>&1
+	docker run -t -i patrickfrey/$1 /test.sh > logs/$1.test.log 2>&1
 }
 
 if [ "$#" -lt 1 ]; then
