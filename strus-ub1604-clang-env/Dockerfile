@@ -14,6 +14,8 @@ RUN apt-get update \
 
 RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.8 380 \
 	--slave /usr/bin/clang++ clang++ /usr/bin/clang++-3.8 \
+	--slave /usr/bin/lldb lldb /usr/bin/lldb-3.8 \
+	--slave /usr/bin/lldb-server lldb-server /usr/bin/lldb-server-3.8 \
 	--slave	/usr/bin/clang-check clang-check /usr/bin/clang-check-3.8 \
 	--slave /usr/bin/clang-query clang-query /usr/bin/clang-query-3.8 \
 	--slave /usr/bin/clang-rename clang-rename /usr/bin/clang-rename-3.8
@@ -43,5 +45,5 @@ RUN apt-get -y --yes install \
 RUN locale-gen en_US.UTF-8
 RUN add-apt-repository -y ppa:ondrej/php
 RUN apt-get update
-RUN apt-get install -y php7.1 php7.1-dev
+RUN apt-get install -y php7.0 php7.0-dev
 
