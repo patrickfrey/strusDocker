@@ -91,7 +91,6 @@ RUN cd strusAll-master \
 		-DWITH_STRUS_PATTERN=YES \
 		.. \
 	&& make -j 7 \
-	&& CTEST_OUTPUT_ON_FAILURE=1 make test \
 	&& make install
 
 # Set library search path
