@@ -1,6 +1,9 @@
 FROM patrickfrey/strus-arch-env
 MAINTAINER patrickpfrey@yahoo.com
 
+# Install scripts to test all
+COPY test.sh /
+
 # Project textwolf
 RUN wget https://github.com/patrickfrey/textwolf/archive/master.zip
 RUN unzip master.zip && rm master.zip

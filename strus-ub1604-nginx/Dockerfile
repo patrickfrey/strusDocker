@@ -2,10 +2,10 @@ FROM patrickfrey/strus-ub1604:v0_15
 MAINTAINER patrickpfrey@yahoo.com
 
 RUN apt-get update \
- && apt-get -y --force-yes install nginx php7.1 php7.1-cli php7.1-cgi php7.1-fpm vim
+ && apt-get -y --force-yes install nginx php7.0 php7.0-cli php7.0-cgi php7.0-fpm vim
 RUN rm -v /etc/nginx/nginx.conf
 
-COPY ./strus.ini /etc/php/7.1/mods-available/strus.ini
+COPY ./strus.ini /etc/php/7.0/mods-available/strus.ini
 RUN phpenmod strus
 
 COPY ./nginx.conf /etc/nginx/nginx.conf

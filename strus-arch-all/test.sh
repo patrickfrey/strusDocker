@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cd /strusAll-master; make test
+cd /strusAll-master/build; make test
 
 
