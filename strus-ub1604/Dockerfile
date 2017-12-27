@@ -73,14 +73,14 @@ RUN cd strusBindings-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
 RUN cd strusBindings-master/3rdParty && cp -Rf ../../papuga-master/* papuga/
 
 # Build
-RUN cd strusBase-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strus-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strusAnalyzer-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strusTrace-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strusModule-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strusRpc-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strusPattern-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strusVector-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strusUtilities-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
-RUN cd strusBindings-master/ && cmake -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_STRUS_VECTOR=YES -DWITH_STRUS_PATTERN=YES . && make && make install
+RUN cd strusBase-master/ && cmake -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strus-master/ && cmake -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusAnalyzer-master/ && cmake -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusTrace-master/ && cmake -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusModule-master/ && cmake -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusRpc-master/ && cmake -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusPattern-master/ && cmake -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusVector-master/ && cmake -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusUtilities-master/ && cmake -DCMAKE_BUILD_TYPE=Release . && make && make install
+RUN cd strusBindings-master/ && cmake -DCMAKE_BUILD_TYPE=Release -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_STRUS_VECTOR=YES -DWITH_STRUS_PATTERN=YES . && make && make install
 
