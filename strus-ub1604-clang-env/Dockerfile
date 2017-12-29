@@ -40,10 +40,4 @@ RUN apt-get -y --yes install \
 	python3-dev \
 	zlib1g-dev \
 	libxml2-dev \
-	language-pack-en-base
-
-RUN locale-gen en_US.UTF-8
-RUN add-apt-repository -y ppa:ondrej/php
-RUN apt-get update
-RUN apt-get install -y php7.0 php7.0-dev
-
+	php7.0-dev

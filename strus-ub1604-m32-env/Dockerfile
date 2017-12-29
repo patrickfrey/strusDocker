@@ -14,9 +14,6 @@ RUN apt-get update \
 	autotools-dev autoconf libtool \
 	ragel
 
-ENV LANG "en_US.UTF-8"
-ENV LC_ALL "en_US.UTF-8"
-
 RUN wget https://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.gz
 RUN tar -xvzf boost_1_58_0.tar.gz && rm boost_1_58_0.tar.gz
 RUN cd boost_1_58_0 && ./bootstrap.sh --with-libraries=atomic,chrono,date_time,filesystem,program_options,regex,system,thread,timer
