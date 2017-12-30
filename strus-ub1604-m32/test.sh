@@ -1,5 +1,6 @@
 #!/bin/sh
 
+cd /strusBase-master/; make test
 cd /strus-master/; make test
 cd /strusAnalyzer-master; make test
 cd /strusModule-master; make test

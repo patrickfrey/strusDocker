@@ -8,3 +8,5 @@ cd /strusPattern-master; make test
 cd /strusVector-master; make test
 cd /strusUtilities-master; make test
 cd /strusBindings-master; make test
+
+
