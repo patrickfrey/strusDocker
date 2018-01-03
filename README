@@ -1,9 +1,11 @@
 Some docker image sources for the strus search engine
 
-Strus project homepage at http://project-strus.net with articles, links, documentation.
+Licenced as MPLv2 (Mozilla Public License, Version 2 - https://www.mozilla.org/en-US/MPL/2.0)
+For 3rdParty licenses see LICENSE.3rdParty
 
-* Contributors welcome
-* Open for sharing ideas
-* Open for interesting projects
+The project Strus implements a set of libraries, tools for building a competitive, 
+scalable search engine for text retrieval.
+It is a solution for small projects as well as larger scale applications.
+Strus project homepage at http://project-strus.net with articles, links, documentation.
 
 
