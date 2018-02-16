@@ -8,10 +8,7 @@ COPY test.sh /
 RUN wget https://github.com/patrickfrey/textwolf/archive/master.zip
 RUN unzip master.zip && rm master.zip
 
-# Project fmt
-RUN wget https://github.com/fmtlib/fmt/archive/master.zip
-RUN unzip master.zip && rm master.zip
-
+# Project Lua
 RUN wget https://github.com/lua/lua/archive/master.zip
 RUN unzip master.zip && rm master.zip
 
@@ -19,7 +16,6 @@ RUN unzip master.zip && rm master.zip
 RUN wget https://github.com/patrickfrey/papuga/archive/master.zip
 RUN unzip master.zip && rm master.zip
 RUN cd papuga-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
-RUN cd papuga-master/3rdParty && cp -Rf ../../fmt-master/* fmt/
 RUN cd papuga-master/3rdParty && cp -Rf ../../lua-master/* lua/
 
 # Project hyperscan
