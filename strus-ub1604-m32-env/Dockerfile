@@ -8,7 +8,7 @@ RUN add-apt-repository universe
 RUN apt-get update \
  && apt-get --yes install \
 	unzip wget git cmake \
-	make g++ build-essential \
+	make g++ build-essential libc6-dev-x32 \
 	g++-multilib gcc-multilib \
 	debhelper python \
 	autotools-dev autoconf libtool \
