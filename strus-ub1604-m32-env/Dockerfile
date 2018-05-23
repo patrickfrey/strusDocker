@@ -7,12 +7,16 @@ RUN add-apt-repository universe
 
 RUN apt-get update \
  && apt-get --yes install \
-	unzip wget git cmake \
+	unzip wget git \
 	make g++ build-essential libc6-dev-x32 \
 	g++-multilib gcc-multilib \
 	debhelper python \
 	autotools-dev autoconf libtool \
 	ragel
+
+RUN wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/cmake/3.9.0-1/cmake_3.9.0.orig.tar.gz
+RUN tar -xvzf cmake_3.9.0.orig.tar.gz 
+RUN cd cmake_3.9.0 && ./configure --prefix=/usr/bin && make && make install
 
 RUN wget https://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.gz
 RUN tar -xvzf boost_1_58_0.tar.gz && rm boost_1_58_0.tar.gz
