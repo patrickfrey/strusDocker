@@ -30,6 +30,5 @@ RUN cd snappy-master && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS="-m32" 
 
 RUN wget https://github.com/google/leveldb/archive/master.zip
 RUN unzip master.zip && rm master.zip
-RUN cd leveldb-master/ && cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr . && make OPT="-m32 -O2 -DNDEBUG" LDFLAGS="-pthread -m32 -L../snappy-master" && make && make install
-
+RUN cd leveldb-master/ && cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr . && make OPT="-m32 -O2 -DNDEBUG" LDFLAGS="-pthread -m32 -L../snappy-master" && make && mkdir lib && cp libleveldb.a lib/
 
