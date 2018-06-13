@@ -10,12 +10,7 @@ ENV LANG "en_US.UTF-8"
 ENV LC_ALL "en_US.UTF-8"
 
 RUN apt-get -y --yes install \
-	libboost1.58-dev \
-	libboost-filesystem1.58-dev \
-	libboost-system1.58-dev \
-	libboost-regex1.58-dev \
-	libboost-thread1.58-dev \
-	libsnappy-dev \
+	libboost-all-dev \
 	libleveldb-dev \
 	libtre-dev \
 	libuv-dev \
