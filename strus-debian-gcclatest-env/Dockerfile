@@ -20,7 +20,5 @@ RUN apt-get -y --yes install \
 	libblas-dev \
 	python3-dev \
 	zlib1g-dev \
-	libxml2-dev \
-	php7.0-dev
-
+	libxml2-dev
 
