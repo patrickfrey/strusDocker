@@ -70,11 +70,11 @@ RUN cd strusAll-master && cp -Rf ../strusVector-master/* strusVector/
 RUN cd strusAll-master && cp -Rf ../strusUtilities-master/* strusUtilities/
 RUN cd strusAll-master && cp -Rf ../strusBindings-master/* strusBindings/
 
-RUN cd hyperscan/ && cmake -DBUILD_SHARED_LIBS=1 -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusAll-master \
 	&& mkdir -p build \
 	&& cd build \
 	&& cmake -DCMAKE_BUILD_TYPE=Release \
+		-DWITH_LUA=YES \
 		-DWITH_PYTHON=YES \
 		-DWITH_PHP=YES \
 		-DWITH_STRUS_VECTOR=YES \
