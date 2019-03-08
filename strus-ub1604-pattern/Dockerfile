@@ -9,8 +9,8 @@ RUN wget https://github.com/patrickfrey/textwolf/archive/master.zip
 RUN unzip master.zip && rm master.zip
 
 # Project hyperscan
-RUN wget https://github.com/01org/hyperscan/archive/master.zip
-RUN unzip master.zip && rm master.zip
+RUN git clone https://github.com/intel/hyperscan.git
+RUN cd hyperscan && git checkout tags/v4.7.0
 
 # Project strusBase
 RUN wget https://github.com/patrickfrey/strusBase/archive/0.15.4.zip
@@ -47,7 +47,6 @@ RUN cd strusRpc-0.15.4/ && cmake CMakeLists.txt && make && make install
 RUN wget https://github.com/patrickfrey/strusPattern/archive/0.15.4.zip
 RUN unzip 0.15.4.zip && rm 0.15.4.zip
 RUN cd strusPattern-0.15.4/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
-RUN cd strusPattern-0.15.4/3rdParty && cp -Rf ../../hyperscan-master/* hyperscan/
 RUN cd strusPattern-0.15.4/ && cmake CMakeLists.txt && make && make install
 
 # Project strusUtilities

@@ -9,8 +9,8 @@ RUN wget https://github.com/patrickfrey/textwolf/archive/master.zip
 RUN unzip master.zip && rm master.zip
 
 # Project hyperscan
-RUN wget https://github.com/01org/hyperscan/archive/master.zip
-RUN unzip master.zip && rm master.zip
+RUN git clone https://github.com/intel/hyperscan.git
+RUN cd hyperscan && git checkout tags/v4.7.0
 
 # Project Lua
 RUN wget https://github.com/lua/lua/archive/master.zip
@@ -51,7 +51,6 @@ RUN unzip master.zip && rm master.zip
 RUN wget https://github.com/patrickfrey/strusPattern/archive/master.zip
 RUN unzip master.zip && rm master.zip
 RUN cd strusPattern-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/ && cd ../..
-RUN cd strusPattern-master/3rdParty && cp -Rf ../../hyperscan-master/* hyperscan/ && cd ../..
 
 # Project strusVector
 RUN wget https://github.com/patrickfrey/strusVector/archive/master.zip
@@ -68,6 +67,7 @@ RUN cd strusBindings-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
 RUN cd strusBindings-master/3rdParty && cp -Rf ../../papuga-master/* papuga/ && cd ../..
 
 # Build
+RUN cd hyperscan/ && cmake -DBUILD_SHARED_LIBS=1 -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusBase-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
 RUN cd strus-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
 RUN cd strusAnalyzer-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCPP_LANGUAGE_VERSION=11 -DCMAKE_BUILD_TYPE=Release . && make && make install
