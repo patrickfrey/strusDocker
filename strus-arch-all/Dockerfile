@@ -18,10 +18,6 @@ RUN unzip master.zip && rm master.zip
 RUN cd papuga-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
 RUN cd papuga-master/3rdParty && cp -Rf ../../lua-master/* lua/
 
-# Project hyperscan
-RUN git clone https://github.com/intel/hyperscan.git
-RUN cd hyperscan && git checkout tags/v4.7.0
-
 # Project strusBase
 RUN wget https://github.com/patrickfrey/strusBase/archive/master.zip
 RUN unzip master.zip && rm master.zip
@@ -47,11 +43,6 @@ RUN unzip master.zip && rm master.zip
 RUN wget https://github.com/patrickfrey/strusRpc/archive/master.zip
 RUN unzip master.zip && rm master.zip
 
-# Project strusPattern
-RUN wget https://github.com/patrickfrey/strusPattern/archive/master.zip
-RUN unzip master.zip && rm master.zip
-RUN cd strusPattern-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
-
 # Project strusVector
 RUN wget https://github.com/patrickfrey/strusVector/archive/master.zip
 RUN unzip master.zip && rm master.zip
@@ -75,7 +66,6 @@ RUN cd strusAll-master && cp -Rf ../strusAnalyzer-master/* strusAnalyzer/
 RUN cd strusAll-master && cp -Rf ../strusTrace-master/* strusTrace/
 RUN cd strusAll-master && cp -Rf ../strusModule-master/* strusModule/
 RUN cd strusAll-master && cp -Rf ../strusRpc-master/* strusRpc/
-RUN cd strusAll-master && cp -Rf ../strusPattern-master/* strusPattern/
 RUN cd strusAll-master && cp -Rf ../strusVector-master/* strusVector/
 RUN cd strusAll-master && cp -Rf ../strusUtilities-master/* strusUtilities/
 RUN cd strusAll-master && cp -Rf ../strusBindings-master/* strusBindings/
@@ -88,7 +78,7 @@ RUN cd strusAll-master \
 		-DWITH_PYTHON=YES \
 		-DWITH_PHP=YES \
 		-DWITH_STRUS_VECTOR=YES \
-		-DWITH_STRUS_PATTERN=YES \
+		-DWITH_STRUS_PATTERN=NO \
 		.. \
 	&& make -j 7 \
 	&& make install
