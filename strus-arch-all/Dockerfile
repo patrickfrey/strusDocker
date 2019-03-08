@@ -19,8 +19,10 @@ RUN cd papuga-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
 RUN cd papuga-master/3rdParty && cp -Rf ../../lua-master/* lua/
 
 # Project hyperscan
-RUN wget https://github.com/01org/hyperscan/archive/master.zip
-RUN unzip master.zip && rm master.zip
+RUN git clone https://github.com/intel/hyperscan.git
+cd hyperscan
+git checkout tags/v4.7.0
+cd ..
 
 # Project strusBase
 RUN wget https://github.com/patrickfrey/strusBase/archive/master.zip
@@ -51,7 +53,6 @@ RUN unzip master.zip && rm master.zip
 RUN wget https://github.com/patrickfrey/strusPattern/archive/master.zip
 RUN unzip master.zip && rm master.zip
 RUN cd strusPattern-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
-RUN cd strusPattern-master/3rdParty && cp -Rf ../../hyperscan-master/* hyperscan/
 
 # Project strusVector
 RUN wget https://github.com/patrickfrey/strusVector/archive/master.zip
@@ -80,6 +81,8 @@ RUN cd strusAll-master && cp -Rf ../strusPattern-master/* strusPattern/
 RUN cd strusAll-master && cp -Rf ../strusVector-master/* strusVector/
 RUN cd strusAll-master && cp -Rf ../strusUtilities-master/* strusUtilities/
 RUN cd strusAll-master && cp -Rf ../strusBindings-master/* strusBindings/
+
+RUN cd hyperscan/ && cmake -DBUILD_SHARED_LIBS=1 -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusAll-master \
 	&& mkdir -p build \
 	&& cd build \
