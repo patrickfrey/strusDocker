@@ -20,9 +20,7 @@ RUN cd papuga-master/3rdParty && cp -Rf ../../lua-master/* lua/
 
 # Project hyperscan
 RUN git clone https://github.com/intel/hyperscan.git
-cd hyperscan
-git checkout tags/v4.7.0
-cd ..
+RUN cd hyperscan && git checkout tags/v4.7.0
 
 # Project strusBase
 RUN wget https://github.com/patrickfrey/strusBase/archive/master.zip
