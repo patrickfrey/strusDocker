@@ -22,6 +22,11 @@ RUN cd papuga-master/3rdParty && cp -Rf ../../lua-master/* lua/
 RUN git clone https://github.com/intel/hyperscan.git
 RUN cd hyperscan && git checkout tags/v4.7.0
 
+# Project cppcms
+RUN wget https://sourceforge.net/projects/cppcms/files/cppcms/1.0.5/cppcms-1.0.5.tar.bz2
+RUN bzip2 -d cppcms-1.0.5.tar.bz2
+RUN tar -xvf cppcms-1.0.5.tar
+
 # Project strusBase
 RUN wget https://github.com/patrickfrey/strusBase/archive/master.zip
 RUN unzip master.zip && rm master.zip
@@ -73,6 +78,8 @@ RUN unzip master.zip && rm master.zip
 # Project strusAll
 # Build
 RUN cd hyperscan/ && cmake -DBUILD_SHARED_LIBS=1 -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
+RUN cd cppcms-1.0.5 && cmake . && make install
+
 RUN cd strusBase-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strus-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusAnalyzer-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install

@@ -61,9 +61,15 @@ RUN cd strusBindings-master/3rdParty && cp -Rf ../../papuga-master/* papuga/
 RUN wget https://github.com/patrickfrey/strusWebService/archive/master.zip
 RUN unzip master.zip && rm master.zip
 
+# Project cppcms
+RUN wget https://sourceforge.net/projects/cppcms/files/cppcms/1.0.5/cppcms-1.0.5.tar.bz2
+RUN bzip2 -d cppcms-1.0.5.tar.bz2
+RUN tar -xvf cppcms-1.0.5.tar
+
 # Project strusAll
 RUN wget https://github.com/patrickfrey/strusAll/archive/master.zip
 RUN unzip master.zip && rm master.zip
+
 RUN cd strusAll-master && cp -Rf ../strusBase-master/* strusBase/
 RUN cd strusAll-master && cp -Rf ../strus-master/* strus/
 RUN cd strusAll-master && cp -Rf ../strusAnalyzer-master/* strusAnalyzer/
@@ -87,6 +93,7 @@ RUN cd strusAll-master \
 	&& make -j 7 \
 	&& make install
 
+RUN cd cppcms-1.0.5 && cmake . && make install
 RUN cd strusWebService-master \
 	&& mkdir -p build \
 	&& cd build \
