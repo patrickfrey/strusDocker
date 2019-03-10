@@ -83,6 +83,12 @@ RUN cd strusAll-master \
 	&& make -j 7 \
 	&& make install
 
+RUN cd strusWebService-master \
+	&& mkdir -p build \
+	&& cd build \
+	&& cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release .. \
+	&& make -j 6 && make install
+
 # Set library search path
 RUN echo /usr/local/lib/strus > /etc/ld.so.conf.d/strus.conf
 RUN ldconfig

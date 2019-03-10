@@ -66,6 +66,10 @@ RUN unzip master.zip && rm master.zip
 RUN cd strusBindings-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
 RUN cd strusBindings-master/3rdParty && cp -Rf ../../papuga-master/* papuga/
 
+# Project strusWebService
+RUN wget https://github.com/patrickfrey/strusWebService/archive/master.zip
+RUN unzip master.zip && rm master.zip
+
 # Project strusAll
 # Build
 RUN cd hyperscan/ && cmake -DBUILD_SHARED_LIBS=1 -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
@@ -79,6 +83,7 @@ RUN cd strusPattern-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMP
 RUN cd strusVector-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusUtilities-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusBindings-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_STRUS_VECTOR=YES -DWITH_STRUS_PATTERN=YES . && make -j 6 && make install
+RUN cd strusWebService-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 
 # Set library search path
 RUN echo /usr/local/lib/strus > /etc/ld.so.conf.d/strus.conf
