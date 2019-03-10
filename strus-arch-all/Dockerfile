@@ -57,6 +57,10 @@ RUN unzip master.zip && rm master.zip
 RUN cd strusBindings-master/3rdParty && cp -Rf ../../textwolf-master/* textwolf/
 RUN cd strusBindings-master/3rdParty && cp -Rf ../../papuga-master/* papuga/
 
+# Project strusWebService
+RUN wget https://github.com/patrickfrey/strusWebService/archive/master.zip
+RUN unzip master.zip && rm master.zip
+
 # Project strusAll
 RUN wget https://github.com/patrickfrey/strusAll/archive/master.zip
 RUN unzip master.zip && rm master.zip
