@@ -61,8 +61,6 @@ RUN cd strusAnalyzer-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COM
 RUN cd strusTrace-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusModule-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusRpc-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
-RUN cd strusPattern-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
-RUN cd strusVector-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusUtilities-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release . && make -j 6 && make install
 RUN cd strusBindings-master/ && cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release -DWITH_PHP=YES -DWITH_PYTHON=YES -DWITH_STRUS_VECTOR=NO -DWITH_STRUS_PATTERN=NO -DWITH_WEBREQUEST=NO . && make -j 6 && make install
 
