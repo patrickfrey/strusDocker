@@ -1,4 +1,4 @@
-FROM greyltc/archlinux:latest
+FROM archlinux:latest
 MAINTAINER patrickpfrey@yahoo.com
 
 RUN pacman -Syu
