@@ -82,7 +82,8 @@ RUN cd strusAll-master && cp -Rf ../strusBindings-master/* strusBindings/
 RUN cd strusAll-master && cp -Rf ../strusWebService-master/* strusWebService/
 
 RUN cd cppcms-1.0.5 \
-	&& cmake  . 
+	&& cmake  .  \
+	&& make -j 7
 RUN cd cppcms-1.0.5 && make install
 
 RUN cd strusAll-master \
