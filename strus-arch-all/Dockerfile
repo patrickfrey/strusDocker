@@ -79,6 +79,11 @@ RUN cd strusAll-master && cp -Rf ../strusRpc-master/* strusRpc/
 RUN cd strusAll-master && cp -Rf ../strusVector-master/* strusVector/
 RUN cd strusAll-master && cp -Rf ../strusUtilities-master/* strusUtilities/
 RUN cd strusAll-master && cp -Rf ../strusBindings-master/* strusBindings/
+RUN cd strusAll-master && cp -Rf ../strusWebService-master/* strusWebService/
+
+RUN cd cppcms-1.0.5 \
+	&& cmake -E env CXXFLAGS="std=c++03" . 
+	&& make install
 
 RUN cd strusAll-master \
 	&& mkdir -p build \
@@ -87,19 +92,13 @@ RUN cd strusAll-master \
 		-DWITH_LUA=YES \
 		-DWITH_PYTHON=YES \
 		-DWITH_PHP=YES \
-		-DWITH_STRUS_WEBSERVICE=NO \
+		-DWITH_STRUS_WEBSERVICE=YES \
 		-DWITH_STRUS_VECTOR=YES \
 		-DWITH_STRUS_PATTERN=NO \
 		.. \
 	&& make -j 7 \
 	&& make install
 
-RUN cd cppcms-1.0.5 && cmake -E env CXXFLAGS="std=c++03" . && make install
-RUN cd strusWebService-master \
-	&& mkdir -p build \
-	&& cd build \
-	&& cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_BUILD_TYPE=Release .. \
-	&& make -j 6 && make install
 
 # Set library search path
 RUN echo /usr/local/lib/strus > /etc/ld.so.conf.d/strus.conf
