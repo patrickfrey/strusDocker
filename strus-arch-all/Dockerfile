@@ -94,7 +94,7 @@ RUN cd strusAll-master \
 	&& make -j 7 \
 	&& make install
 
-RUN cd cppcms-1.0.5 && cmake . && make install
+RUN cd cppcms-1.0.5 && cmake -E env CXXFLAGS="std=c++03" . && make install
 RUN cd strusWebService-master \
 	&& mkdir -p build \
 	&& cd build \
