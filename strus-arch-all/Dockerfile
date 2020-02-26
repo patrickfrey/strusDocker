@@ -82,7 +82,7 @@ RUN cd strusAll-master && cp -Rf ../strusBindings-master/* strusBindings/
 RUN cd strusAll-master && cp -Rf ../strusWebService-master/* strusWebService/
 
 RUN cd cppcms-1.0.5 \
-	&& cmake -E env CXXFLAGS="std=c++03" . 
+	&& cmake  -DCMAKE_CXX_FLAGS="-std=c++03" . 
 RUN cd cppcms-1.0.5 && make install
 
 RUN cd strusAll-master \
